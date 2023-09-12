@@ -5,6 +5,7 @@ import { Card, Title } from '../../components';
 import { VALUES } from '../../constants/landing';
 import Bg1 from '../../assets/background/wave-1.png';
 import Bg2 from '../../assets/background/wave-2.png';
+import { NAVBAR_PAGES } from '../../constants/navbar';
 
 const Values = () => {
     const [hover, setHover] = useState(-1);
@@ -29,7 +30,7 @@ const Values = () => {
                     py: 10,
                 })}
             >
-                <Container>
+                <Container id={NAVBAR_PAGES[2].id}>
                     <Title>Nos Chaînes de Valeur</Title>
                     <Grid container spacing={3}>
                         {VALUES.map((item, index) => (

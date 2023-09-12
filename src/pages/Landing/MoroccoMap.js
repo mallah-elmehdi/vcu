@@ -16,6 +16,7 @@ import {
     TABS_COUNTRIES,
 } from '../../constants/landing';
 import Bg from '../../assets/landing/maps.jpg';
+import { NAVBAR_PAGES } from '../../constants/navbar';
 
 const Marker = ({ top, right, text, line, desc, correction, reverse }) => {
     return (
@@ -163,6 +164,7 @@ const MoroccoMap = () => {
 
     return (
         <Box
+            id={NAVBAR_PAGES[4].id}
             sx={(theme) => ({
                 position: 'relative',
                 backgroundImage: `url(${Bg})`,

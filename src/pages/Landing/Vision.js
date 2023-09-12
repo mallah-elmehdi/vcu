@@ -5,10 +5,11 @@ import Image from '../../assets/landing/vision.jpg';
 import { Img, Title } from '../../components';
 import { VISION } from '../../constants/landing';
 import Leaf from '../../assets/utils/leaf.png';
+import { NAVBAR_PAGES } from '../../constants/navbar';
 
 const Vision = () => {
     return (
-        <Container sx={{ alignSelf: 'center' }}>
+        <Container id={NAVBAR_PAGES[1].id} sx={{ alignSelf: 'center' }}>
             <Grid container spacing={10} alignItems="center">
                 <Grid item md={6} xs={12}>
                     <Stack spacing={3}>

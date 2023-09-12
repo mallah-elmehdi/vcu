@@ -72,23 +72,23 @@ export const VALUES = [
 export const HOW_IT_WORKS = [
     {
         title: 'Diagnostic',
-        desc: "Notre approche pour le développement des chaînes de valeur agricole s'articule autour de la promotion de pratiques agricoles durables, visant à préserver les ressources naturelles et à maintenir l'équilibre des écosystèmes, tout en encourageant la valorisation des produits agricoles en produits à haute valeur ajoutée",
         image: <BsFillSearchHeartFill />,
+        desc: ['Terrain', 'Bibliographie', 'Cartographie'],
     },
     {
         title: 'Restitution',
-        desc: "L'artisanat est une richesse culturelle précieuse que nous voulons préserver tout en la transformant en une source de revenus durable pour les artisans. Notre approche consiste à soutenir la modernisation des processus de production tout en respectant les compétences traditionnelles",
         image: <BsFillPeopleFill />,
+        desc: ['Donnés collectés', 'Contexte national et international'],
     },
     {
         title: "Plan d'implémentation",
-        desc: "Dans le secteur du tourisme durable, notre approche repose sur la préservation de l'environnement naturel et culturel tout en offrant des expériences touristiques authentiques. Nous collaborons avec les acteurs locaux pour développer des itinéraires touristiques respectueux de l'environnement, promouvoir le tourisme communautaire",
         image: <BsFillRecordCircleFill />,
+        desc: ['Capacity building', 'Assistance technique', "Appui à L'investissement"],
     },
     {
         title: 'Evaluation',
-        desc: "Nous favorisons la fabrication de textiles de haute qualité en adoptant des pratiques de production équitables et respectueuses de l'environnement, tout en garantissant une augmentation des revenus et une réduction du niveau de pénibilité au travail",
         image: <BsClipboard2CheckFill />,
+        desc: ['KPIs / KVIs', 'Stratégie de sortie'],
     },
 ];
 

@@ -1,10 +1,11 @@
-import { Avatar, Box, Container, Grid, Typography } from '@mui/material';
+import { Avatar, Box, Container, Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { Card, Title } from '../../components';
 import { Accordion, AccordionDetails, AccordionSummary } from '../../components/Accordions';
 import { HOW_IT_WORKS } from '../../constants/landing';
 import Bg from '../../assets/landing/methodologie.jpg';
 import Bg2 from '../../assets/utils/leaf-branch.png';
+import { BsFillCircleFill } from 'react-icons/bs';
 
 const Methodologie = () => {
     const [expanded, setExpanded] = React.useState(false);
@@ -69,10 +70,31 @@ const Methodologie = () => {
                                             </Box>
                                         </AccordionSummary>
                                         <AccordionDetails>
-                                            <Typography>
-                                                Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget maximus
-                                                est, id dignissim quam.
-                                            </Typography>
+                                            {item.desc.map((item) => (
+                                                <Box display="flex" alignItems="center" gap={1}>
+                                                    <Avatar
+                                                        sx={(theme) => ({
+                                                            backgroundColor: 'transparent',
+                                                            width: 8,
+                                                            height: 8,
+                                                            color: theme.palette.secondary.main,
+                                                        })}
+                                                    >
+                                                        <BsFillCircleFill />
+                                                    </Avatar>
+                                                    <Stack>
+                                                        <Typography
+                                                            sx={(theme) => ({
+                                                                fontSize: theme.fontSize.md,
+                                                                fontWeight: theme.fontWeight.light,
+                                                                color: theme.palette.common.black,
+                                                            })}
+                                                        >
+                                                            {item}
+                                                        </Typography>
+                                                    </Stack>
+                                                </Box>
+                                            ))}
                                         </AccordionDetails>
                                     </Accordion>
                                 </Grid>

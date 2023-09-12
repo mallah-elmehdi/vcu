@@ -3,10 +3,12 @@ import React from 'react';
 import Image from '../../assets/landing/howItWorks.png';
 import { Img, Title } from '../../components';
 import Bg from '../../assets/utils/leafs-branch.png';
+import { NAVBAR_PAGES } from '../../constants/navbar';
 
 const HowItWorks = () => {
     return (
         <Box
+            id={NAVBAR_PAGES[3].id}
             sx={(theme) => ({
                 position: 'relative',
                 backgroundImage: `url(${Bg})`,

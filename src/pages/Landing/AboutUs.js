@@ -5,6 +5,7 @@ import Bg from '../../assets/background/blob-1.png';
 import Leaf from '../../assets/utils/leaf.png';
 import { Card, Img, Title } from '../../components';
 import { ABOUT_US } from '../../constants/landing';
+import { NAVBAR_PAGES } from '../../constants/navbar';
 
 const AboutUs = () => {
     return (
@@ -16,7 +17,7 @@ const AboutUs = () => {
                 backgroundSize: 'contain',
             })}
         >
-            <Container sx={{ alignSelf: 'center' }}>
+            <Container id={NAVBAR_PAGES[0].id} sx={{ alignSelf: 'center' }}>
                 <Title>À propos de nous</Title>
                 <Grid container spacing={5} alignItems="center">
                     <Grid item md={6}>
@@ -79,7 +80,7 @@ const AboutUs = () => {
                                                 zIndex: 0,
                                                 WebkitFilter: 'drop-shadow(0px 6px 6px rgba(0,0,0,0.2))',
                                                 filter: 'drop-shadow(0px 6px 6px rgba(0,0,0,0.2))',
-                                                transform: "rotate(180deg)"
+                                                transform: 'rotate(180deg)',
                                             })}
                                             src={Leaf}
                                         />

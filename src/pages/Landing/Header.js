@@ -8,13 +8,16 @@ import Slide2 from '../../assets/landing/slide-2.jpg';
 import Slide3 from '../../assets/landing/slide-3.jpg';
 import Slide5 from '../../assets/landing/slide-5.jpg';
 import Slide6 from '../../assets/landing/slide-6.jpg';
-import { Button, Navbar } from '../../components';
+import { Button, Link, Navbar } from '../../components';
+import { PAGES } from '../../constants/pages';
+import { NAVBAR_PAGES } from '../../constants/navbar';
+import { VALUES } from '../../constants/landing';
 
 const images = [Slide1, Slide2, Slide3, Slide5, Slide6];
 
 const Header = () => {
     return (
-        <Box position="relative">
+        <Box position="relative" width="100%">
             <Slider
                 {...{
                     fade: true,
@@ -25,20 +28,22 @@ const Header = () => {
                     lazyLoad: 'progressive',
                     autoplay: true,
                     autoplaySpeed: 5500,
+                    arrows: false,
                 }}
             >
                 {images.map((image, index) => (
-                    <Box
-                        key={index}
-                        sx={{
-                            height: { md: 550, xs: 850 },
-                            backgroundColor: 'red',
-                            backgroundImage: `url(${image})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                        }}
-                        className={index % 2 ? 'zoom-in' : 'zoom-out'}
-                    />
+                    <>
+                        <Box
+                            key={index}
+                            sx={{
+                                height: { md: 550, xs: 850 },
+                                backgroundImage: `url(${image})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                            }}
+                            className={index % 2 ? 'zoom-in' : 'zoom-out'}
+                        />
+                    </>
                 ))}
             </Slider>
             <Box position="absolute" width="100%" top={0} right={0} zIndex={100}>
@@ -83,26 +88,15 @@ const Header = () => {
                 </Container>
                 <Container>
                     <Grid container spacing={3}>
-                        <Grid item md={3} sm={6} xs={12}>
-                            <Button variant="outlined" color="muted" sx={{ width: '100%' }}>
-                                Agricole
-                            </Button>
-                        </Grid>
-                        <Grid item md={3} sm={6} xs={12}>
-                            <Button variant="outlined" color="muted" sx={{ width: '100%' }}>
-                                Artisanal
-                            </Button>
-                        </Grid>
-                        <Grid item md={3} sm={6} xs={12}>
-                            <Button variant="outlined" color="muted" sx={{ width: '100%' }}>
-                                Tourisme Durable
-                            </Button>
-                        </Grid>
-                        <Grid item md={3} sm={6} xs={12}>
-                            <Button variant="outlined" color="muted" sx={{ width: '100%' }}>
-                                Textile
-                            </Button>
-                        </Grid>
+                        {VALUES.map((item) => (
+                            <Grid item md={3} sm={6} xs={12}>
+                                <Link to={PAGES.landing.url + '#' + NAVBAR_PAGES[2].id}>
+                                    <Button variant="outlined" color="muted" sx={{ width: '100%' }}>
+                                        {item.title}
+                                    </Button>
+                                </Link>
+                            </Grid>
+                        ))}
                     </Grid>
                 </Container>
             </Box>
