@@ -1,6 +1,6 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { Navigate, createBrowserRouter } from 'react-router-dom';
 import { PAGES } from '../constants/pages';
-import { Base, Landing, NotFound } from '../pages';
+import { Base, Landing } from '../pages';
 
 export default createBrowserRouter([
     {
@@ -16,9 +16,9 @@ export default createBrowserRouter([
             // -------------- 404
             {
                 path: PAGES.notFound.url,
-                element: <NotFound />,
+                element: <Navigate to={PAGES.landing.url} />,
             },
         ],
-        errorElement: <NotFound />,
+        errorElement: <Navigate to={PAGES.landing.url} />,
     },
 ]);

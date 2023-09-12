@@ -1,4 +1,4 @@
-import { BsFacebook, BsLinkedin, BsTwitch, BsYoutube } from 'react-icons/bs';
+import { BsFacebook, BsFillEnvelopeAtFill, BsFillPhoneFill, BsLinkedin, BsTwitter, BsYoutube } from 'react-icons/bs';
 
 export const SOCIAL = [
     {
@@ -10,11 +10,22 @@ export const SOCIAL = [
         url: 'https://www.linkedin.com',
     },
     {
-        icon: <BsTwitch />,
+        icon: <BsTwitter />,
         url: 'https://www.twitter.com',
     },
     {
         icon: <BsYoutube />,
         url: 'https://www.youtube.com',
+    },
+];
+
+export const CONTACT = [
+    {
+        icon: <BsFillEnvelopeAtFill />,
+        text: 'contact@sil.ma',
+    },
+    {
+        icon: <BsFillPhoneFill />,
+        text: '+212737272727',
     },
 ];

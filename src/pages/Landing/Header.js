@@ -41,7 +41,7 @@ const Header = () => {
                     />
                 ))}
             </Slider>
-            <Box position="absolute" width="100%" height="100%" top={0} right={0} zIndex={9}>
+            <Box position="absolute" width="100%" top={0} right={0} zIndex={100}>
                 <Navbar />
             </Box>
             <Box
@@ -75,7 +75,7 @@ const Header = () => {
                             fontSize: theme.fontSize['4xl'],
                             color: theme.palette.common.white,
                             textAlign: 'center',
-                            mb: 3,
+                            mb: 5,
                         })}
                     >
                         Semez l'avenir, Tissez le progrès, Élevez les vies : Notre Engagement Durable.

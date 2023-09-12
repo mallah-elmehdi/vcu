@@ -15,6 +15,7 @@ import {
     MARKERS_SENEGAL,
     TABS_COUNTRIES,
 } from '../../constants/landing';
+import Bg from '../../assets/landing/maps.jpg';
 
 const Marker = ({ top, right, text, line, desc, correction, reverse }) => {
     return (
@@ -162,86 +163,96 @@ const MoroccoMap = () => {
 
     return (
         <Box
-        // sx={(theme) => ({
-        //     backgroundColor: theme.palette.muted.main,
-        //     py: 10,
-        // })}
+            sx={(theme) => ({
+                position: 'relative',
+                backgroundImage: `url(${Bg})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+            })}
         >
-            <Container sx={{ alignSelf: 'center' }}>
-                <Title>VCU SIL à Aujourd'hui</Title>
+            <Box
+                sx={(theme) => ({
+                    background: theme.gradient.whiteAlpha,
+                    py: 10,
+                })}
+            >
+                <Container sx={{ alignSelf: 'center' }}>
+                    <Title>VCU SIL à Aujourd'hui</Title>
 
-                <Box sx={{ width: '100%' }}>
-                    <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" centered sx={{ mb: 5 }}>
-                        {TABS_COUNTRIES.map((item, index) => (
-                            <StyledTab iconPosition="start" icon={<BsFillCircleFill />} label={item} {...a11yProps(index)} />
-                        ))}
-                    </Tabs>
-                    <Animate checked={value === 0}>
-                        <CustomTabPanel value={value} index={0}>
-                            <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
-                                <Grid item md={4} xs={10} position="relative">
-                                    <Img src={Morocco} />
-                                    {MARKERS_MOROCCO.map((item) => (
-                                        <Marker {...item} />
-                                    ))}
+                    <Box sx={{ width: '100%' }}>
+                        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" centered sx={{ mb: 5 }}>
+                            {TABS_COUNTRIES.map((item, index) => (
+                                <StyledTab iconPosition="start" icon={<BsFillCircleFill />} label={item} {...a11yProps(index)} />
+                            ))}
+                        </Tabs>
+                        <Animate checked={value === 0}>
+                            <CustomTabPanel value={value} index={0}>
+                                <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
+                                    <Grid item md={4} xs={10} position="relative">
+                                        <Img src={Morocco} />
+                                        {MARKERS_MOROCCO.map((item) => (
+                                            <Marker {...item} />
+                                        ))}
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                        </CustomTabPanel>
-                    </Animate>
+                            </CustomTabPanel>
+                        </Animate>
 
-                    <Animate checked={value === 1}>
-                        <CustomTabPanel value={value} index={1}>
-                            <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
-                                <Grid item md={4} xs={10} position="relative">
-                                    <Img src={Senegal} />
-                                    {MARKERS_SENEGAL.map((item) => (
-                                        <Marker {...item} />
-                                    ))}
+                        <Animate checked={value === 1}>
+                            <CustomTabPanel value={value} index={1}>
+                                <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
+                                    <Grid item md={4} xs={10} position="relative">
+                                        <Img src={Senegal} />
+                                        {MARKERS_SENEGAL.map((item) => (
+                                            <Marker {...item} />
+                                        ))}
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                        </CustomTabPanel>
-                    </Animate>
+                            </CustomTabPanel>
+                        </Animate>
 
-                    <Animate checked={value === 2}>
-                        <CustomTabPanel value={value} index={2}>
-                            <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
-                                <Grid item md={4} xs={10} position="relative">
-                                    <Img src={CoteDIvoire} />
-                                    {MARKERS_COTE_D_IVOIRE.map((item) => (
-                                        <Marker {...item} />
-                                    ))}
+                        <Animate checked={value === 2}>
+                            <CustomTabPanel value={value} index={2}>
+                                <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
+                                    <Grid item md={4} xs={10} position="relative">
+                                        <Img src={CoteDIvoire} />
+                                        {MARKERS_COTE_D_IVOIRE.map((item) => (
+                                            <Marker {...item} />
+                                        ))}
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                        </CustomTabPanel>
-                    </Animate>
+                            </CustomTabPanel>
+                        </Animate>
 
-                    <Animate checked={value === 3}>
-                        <CustomTabPanel value={value} index={3}>
-                            <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
-                                <Grid item md={4} xs={10} position="relative">
-                                    <Img src={CapeVerde} />
-                                    {MARKERS_CAPE_VERDE.map((item) => (
-                                        <Marker {...item} />
-                                    ))}
+                        <Animate checked={value === 3}>
+                            <CustomTabPanel value={value} index={3}>
+                                <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
+                                    <Grid item md={4} xs={10} position="relative">
+                                        <Img src={CapeVerde} />
+                                        {MARKERS_CAPE_VERDE.map((item) => (
+                                            <Marker {...item} />
+                                        ))}
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                        </CustomTabPanel>
-                    </Animate>
+                            </CustomTabPanel>
+                        </Animate>
 
-                    <Animate checked={value === 4}>
-                        <CustomTabPanel value={value} index={4}>
-                            <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
-                                <Grid item md={2} xs={10} position="relative">
-                                    <Img src={Malawi} />
-                                    {MARKERS_MALAWI.map((item) => (
-                                        <Marker {...item} />
-                                    ))}
+                        <Animate checked={value === 4}>
+                            <CustomTabPanel value={value} index={4}>
+                                <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
+                                    <Grid item md={2} xs={10} position="relative">
+                                        <Img src={Malawi} />
+                                        {MARKERS_MALAWI.map((item) => (
+                                            <Marker {...item} />
+                                        ))}
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                        </CustomTabPanel>
-                    </Animate>
-                </Box>
-            </Container>
+                            </CustomTabPanel>
+                        </Animate>
+                    </Box>
+                </Container>
+            </Box>
         </Box>
     );
 };

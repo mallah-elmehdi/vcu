@@ -1,9 +1,10 @@
 import { Box, Container, Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
 import 'swiper/css';
-import { Card, Title } from '../../components';
-import { ABOUT_US } from '../../constants/landing';
 import Bg from '../../assets/background/blob-1.png';
+import Leaf from '../../assets/utils/leaf.png';
+import { Card, Img, Title } from '../../components';
+import { ABOUT_US } from '../../constants/landing';
 
 const AboutUs = () => {
     return (
@@ -61,13 +62,34 @@ const AboutUs = () => {
                         <Grid container spacing={4}>
                             {ABOUT_US.map((item, index) => (
                                 <Grid item sm={index === 0 || index === 3 ? 5.2 : 6.8} xs={12}>
-                                    <Card>
-                                        <Stack spacing={2}>
+                                    <Card
+                                        sx={(theme) => ({
+                                            background: theme.gradient.secondaryOne,
+                                            // backgroundColor: alpha(theme.palette.secondary.main, 0.5),
+                                            py: 5,
+                                            position: 'relative',
+                                        })}
+                                    >
+                                        <Img
+                                            sx={(theme) => ({
+                                                position: 'absolute',
+                                                top: -40,
+                                                right: -30,
+                                                width: 100,
+                                                zIndex: 0,
+                                                WebkitFilter: 'drop-shadow(0px 6px 6px rgba(0,0,0,0.2))',
+                                                filter: 'drop-shadow(0px 6px 6px rgba(0,0,0,0.2))',
+                                                transform: "rotate(180deg)"
+                                            })}
+                                            src={Leaf}
+                                        />
+                                        <Stack spacing={1}>
                                             <Typography
                                                 sx={(theme) => ({
                                                     fontSize: theme.fontSize.xl,
                                                     fontWeight: theme.fontWeight.semibold,
-                                                    color: theme.palette.primary.main,
+                                                    // color: theme.palette.primary.main,
+                                                    color: theme.palette.common.white,
                                                     textAlign: 'center',
                                                 })}
                                             >
@@ -77,7 +99,8 @@ const AboutUs = () => {
                                                 sx={(theme) => ({
                                                     fontSize: theme.fontSize.md,
                                                     fontWeight: theme.fontWeight.light,
-                                                    color: theme.palette.common.black,
+                                                    // color: theme.palette.common.black,
+                                                    color: theme.palette.common.white,
                                                     textAlign: 'center',
                                                 })}
                                             >

@@ -1,73 +1,91 @@
 import { Box, Container, Grid, Typography } from '@mui/material';
 import React from 'react';
 import Circle from '../../assets/landing/circle-paint.png';
-import { Img, Title } from '../../components';
+import { Footer, Img, Title } from '../../components';
 import { ASPECTS } from '../../constants/landing';
+import Bg from '../../assets/background/garden.png';
+import MoroccoMap from './MoroccoMap';
 
 const Aspects = () => {
     return (
-        <Box
-            sx={(theme) => ({
-                backgroundColor: theme.palette.muted.main,
-                py: 10,
-            })}
-        >
-            <Container>
-                <Title withPadding zigzag>
-                    Aspects clés pour l'analyse d'une chaine de valeur
-                </Title>
-                <Grid container justifyContent="center" mt={{ md: 20 }} sx={{ transform: { md: 'scale(1)', xs: 'scale(0.75)' } }}>
-                    <Grid item md={4} xs={10} position="relative">
-                        <Img src={Circle} />
+        <Box>
+            <Box
+                sx={(theme) => ({
+                    backgroundColor: theme.palette.muted.main,
+                })}
+            >
+                <Box
+                    sx={(theme) => ({
+                        backgroundImage: `url(${Bg})`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover',
 
-                        {ASPECTS.map((item, index) => (
-                            <Box
-                                sx={(theme) => ({
-                                    width: 140,
-                                    height: 140,
-                                    position: 'absolute',
-                                    borderRadius: theme.borderRadius.full,
-                                    p: 2,
-                                    backgroundColor: theme.palette.secondary.main,
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    transform: 'translate(50%, -50%)',
+                        py: 10,
+                    })}
+                >
+                    <Container>
+                        <Title withPadding zigzag>
+                            Aspects clés pour l'analyse d'une chaine de valeur
+                        </Title>
+                        <Grid container justifyContent="center" mt={{ md: 20 }} sx={{ transform: { md: 'scale(1)', xs: 'scale(0.75)' } }}>
+                            <Grid item md={4} xs={10} position="relative">
+                                <Img src={Circle} />
 
-                                    ...item.position,
-                                })}
-                            >
+                                {ASPECTS.map((item, index) => (
+                                    <Box
+                                        sx={(theme) => ({
+                                            width: 140,
+                                            height: 140,
+                                            position: 'absolute',
+                                            borderRadius: theme.borderRadius.full,
+                                            p: 2,
+                                            backgroundColor: theme.palette.secondary.main,
+                                            display: 'flex',
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                            transform: 'translate(50%, -50%)',
+                                            boxShadow: theme.shadows.default,
+
+                                            ...item.position,
+                                        })}
+                                    >
+                                        <Typography
+                                            sx={(theme) => ({
+                                                fontWeight: theme.fontWeight.bold,
+                                                fontSize: theme.fontSize.md,
+                                                color: theme.palette.common.white,
+                                                textAlign: 'center',
+                                                lineHeight: 1.25,
+                                            })}
+                                        >
+                                            {item.title}
+                                        </Typography>
+                                    </Box>
+                                ))}
+
                                 <Typography
                                     sx={(theme) => ({
                                         fontWeight: theme.fontWeight.bold,
-                                        fontSize: theme.fontSize.md,
-                                        color: theme.palette.common.white,
+                                        fontSize: theme.fontSize['3xl'],
+                                        color: theme.palette.common.black,
                                         textAlign: 'center',
-                                        lineHeight: 1.25,
+                                        top: '50%',
+                                        right: '50%',
+                                        transform: 'translate(50%, -50%)',
+                                        position: 'absolute',
                                     })}
                                 >
-                                    {item.title}
+                                    VCU agricoles
                                 </Typography>
-                            </Box>
-                        ))}
+                            </Grid>
+                        </Grid>
+                    </Container>
+                </Box>
+            </Box>
 
-                        <Typography
-                            sx={(theme) => ({
-                                fontWeight: theme.fontWeight.bold,
-                                fontSize: theme.fontSize['3xl'],
-                                color: theme.palette.common.black,
-                                textAlign: 'center',
-                                top: '50%',
-                                right: '50%',
-                                transform: 'translate(50%, -50%)',
-                                position: 'absolute',
-                            })}
-                        >
-                            VCU agricoles
-                        </Typography>
-                    </Grid>
-                </Grid>
-            </Container>
+            <MoroccoMap />
+            <Footer />
         </Box>
     );
 };

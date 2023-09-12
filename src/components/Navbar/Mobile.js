@@ -8,7 +8,7 @@ import { NAVBAR_PAGES } from '../../constants/navbar';
 
 // ========== MENU TRANSITION
 
-const Mobile = () => {
+const Mobile = ({ sticky }) => {
     // ========== DIALOG OPEN/CLOSE
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = () => setOpen(true);
@@ -16,9 +16,12 @@ const Mobile = () => {
 
     return (
         <>
-            <Logo white square />
+            <Logo white={!sticky} square />
             <Box ml="auto" gap={3} display="flex" alignItems="center" justifyContent="center">
-                <IconButton sx={(theme) => ({ color: theme.palette.common.white })} onClick={handleClickOpen}>
+                <IconButton
+                    sx={(theme) => ({ color: sticky ? theme.palette.primary.main : theme.palette.common.white })}
+                    onClick={handleClickOpen}
+                >
                     <BsList />
                 </IconButton>
             </Box>

@@ -1,4 +1,4 @@
-import { AppBar, Container, Toolbar, useMediaQuery } from '@mui/material';
+import { AppBar, Box, Container, Toolbar, useMediaQuery } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Desktop from './Desktop';
 import Mobile from './Mobile';
@@ -19,7 +19,6 @@ const Navbar = () => {
         <AppBar
             position="fixed"
             sx={(theme) => ({
-                zIndex: 200,
                 backgroundColor: sticky ? theme.palette.common.white : 'transparent',
                 boxShadow: sticky ? theme.shadows.default : 'none',
                 transition: 'all .3s ease',
@@ -31,7 +30,7 @@ const Navbar = () => {
             })}
         >
             <Container>
-                <Toolbar sx={{ py: 3 }}>{md ? <Desktop sticky={sticky} /> : <Mobile />}</Toolbar>
+                <Toolbar sx={{ py: 3 }}>{md ? <Desktop sticky={sticky} /> : <Mobile sticky={sticky} />}</Toolbar>
             </Container>
         </AppBar>
     );

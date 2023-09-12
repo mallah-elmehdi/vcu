@@ -1,7 +1,7 @@
 import { Avatar, Box, CardMedia, Container, Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { BsFillCircleFill } from 'react-icons/bs';
-import Image from '../../assets/landing/slide-2.jpg';
+import Image from '../../assets/landing/vision.jpg';
 import { Img, Title } from '../../components';
 import { VISION } from '../../constants/landing';
 import Leaf from '../../assets/utils/leaf.png';

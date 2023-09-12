@@ -1,5 +1,5 @@
 import { blueGrey } from '@mui/material/colors';
-import { createTheme } from '@mui/material/styles';
+import { alpha, createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
     palette: {
@@ -65,6 +65,19 @@ const theme = createTheme({
 theme.gradient = {
     primary: `linear-gradient(90deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
     secondary: `linear-gradient(25deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+
+    // -----
+
+    primaryOne: `linear-gradient(45deg, ${theme.palette.primary.main} 30%, ${theme.palette.common.white} 180%)`,
+    secondaryOne: `linear-gradient(45deg, ${theme.palette.secondary.main} 30%, ${theme.palette.common.white} 180%)`,
+
+    // -----
+
+    primaryAlpha: `linear-gradient(90deg, ${alpha(theme.palette.primary.main, 0.7)} 0%, ${alpha(theme.palette.secondary.main, 0.7)} 100%)`,
+
+    // -----
+
+    whiteAlpha: `linear-gradient(45deg, ${alpha(theme.palette.secondary.main, 0.9)} 0%, ${alpha(theme.palette.common.white, 0.9)} 40%)`,
 };
 
 theme.palette.common.black = theme.palette.grey['900'];
