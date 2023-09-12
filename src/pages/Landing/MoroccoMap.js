@@ -1,4 +1,4 @@
-import { Avatar, Box, Container, Divider, Grid, Grow, Stack, Tab, Tabs, Typography, styled } from '@mui/material';
+import { Avatar, Box, Container, Divider, Grid, Grow, Stack, Tab, Tabs, Typography, Zoom, styled } from '@mui/material';
 import React from 'react';
 import { BsFillCircleFill } from 'react-icons/bs';
 import Morocco from '../../assets/landing/morocco.png';
@@ -18,98 +18,100 @@ import {
 import Bg from '../../assets/landing/maps.jpg';
 import { NAVBAR_PAGES } from '../../constants/navbar';
 
-const Marker = ({ top, right, text, line, desc, correction, reverse }) => {
+const Marker = ({ top, right, text, line, desc, correction, reverse, index }) => {
     return (
-        <Box
-            sx={(theme) => ({
-                top,
-                right,
-                transform: 'translate(50%, -50%)',
-                position: 'absolute',
-            })}
-        >
-            <Box display="flex" alignItems="center">
-                <Stack
-                    sx={
-                        reverse
-                            ? {
-                                  left: '90%',
-                                  position: 'absolute',
-                              }
-                            : {
-                                  right: '90%',
-                                  position: 'absolute',
-                              }
-                    }
-                >
+        <Zoom in={true} style={{ transitionDelay: `${200 + index * 100}ms` }} {...{ timeout: 1000 }}>
+            <Box
+                sx={(theme) => ({
+                    top,
+                    right,
+                    transform: 'translate(50%, -50%)',
+                    position: 'absolute',
+                })}
+            >
+                <Box display="flex" alignItems="center">
                     <Stack
                         sx={
                             reverse
                                 ? {
+                                      left: '90%',
                                       position: 'absolute',
-                                      top: correction,
-                                      right: 0,
                                   }
                                 : {
+                                      right: '90%',
                                       position: 'absolute',
-                                      top: correction,
-                                      left: 0,
                                   }
                         }
                     >
-                        <Typography
-                            sx={(theme) => ({
-                                fontSize: theme.fontSize.lg,
-                                fontWeight: theme.fontWeight.bold,
-                                color: theme.palette.primary.main,
-                                mb: 0.2,
-                            })}
+                        <Stack
+                            sx={
+                                reverse
+                                    ? {
+                                          position: 'absolute',
+                                          top: correction,
+                                          right: 0,
+                                      }
+                                    : {
+                                          position: 'absolute',
+                                          top: correction,
+                                          left: 0,
+                                      }
+                            }
                         >
-                            {text}
-                        </Typography>
-                        {desc.map((item) => (
-                            <Box display="flex" alignItems="center" gap={0.5}>
-                                <Avatar
-                                    sx={(theme) => ({
-                                        backgroundColor: 'transparent',
-                                        width: 5,
-                                        height: 5,
-                                        color: theme.palette.secondary.main,
-                                    })}
-                                >
-                                    <BsFillCircleFill />
-                                </Avatar>
-                                <Stack>
-                                    <Typography
+                            <Typography
+                                sx={(theme) => ({
+                                    fontSize: theme.fontSize.lg,
+                                    fontWeight: theme.fontWeight.bold,
+                                    color: theme.palette.primary.main,
+                                    mb: 0.2,
+                                })}
+                            >
+                                {text}
+                            </Typography>
+                            {desc.map((item) => (
+                                <Box display="flex" alignItems="center" gap={0.5}>
+                                    <Avatar
                                         sx={(theme) => ({
-                                            fontSize: theme.fontSize.xs,
-                                            fontWeight: theme.fontWeight.light,
-                                            color: theme.palette.common.black,
+                                            backgroundColor: 'transparent',
+                                            width: 5,
+                                            height: 5,
+                                            color: theme.palette.secondary.main,
                                         })}
                                     >
-                                        {item}
-                                    </Typography>
-                                </Stack>
-                            </Box>
-                        ))}
+                                        <BsFillCircleFill />
+                                    </Avatar>
+                                    <Stack>
+                                        <Typography
+                                            sx={(theme) => ({
+                                                fontSize: theme.fontSize.xs,
+                                                fontWeight: theme.fontWeight.light,
+                                                color: theme.palette.common.black,
+                                            })}
+                                        >
+                                            {item}
+                                        </Typography>
+                                    </Stack>
+                                </Box>
+                            ))}
+                        </Stack>
+                        <Divider
+                            sx={(theme) => ({
+                                width: line ? line : 150,
+                                border: '1px solid',
+                                borderColor: theme.palette.secondary.main,
+                            })}
+                        />
                     </Stack>
-                    <Divider
+                    <Box
                         sx={(theme) => ({
-                            width: line ? line : 150,
-                            border: '1px solid',
-                            borderColor: theme.palette.secondary.main,
+                            backgroundColor: theme.palette.secondary.main,
+                            borderRadius: theme.borderRadius.full,
+                            p: 1,
                         })}
                     />
-                </Stack>
-                <Box
-                    sx={(theme) => ({
-                        backgroundColor: theme.palette.secondary.main,
-                        borderRadius: theme.borderRadius.full,
-                        p: 1,
-                    })}
-                />
+                </Box>
             </Box>
-        </Box>
+        </Zoom>
     );
 };
 
@@ -177,6 +179,7 @@ const MoroccoMap = () => {
                 sx={(theme) => ({
                     background: theme.gradient.whiteAlpha,
                     py: 10,
+                    minHeight: 900,
                 })}
             >
                 <Container sx={{ alignSelf: 'center' }}>
@@ -193,8 +196,8 @@ const MoroccoMap = () => {
                                 <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
                                     <Grid item md={4} xs={10} position="relative">
                                         <Img src={Morocco} />
-                                        {MARKERS_MOROCCO.map((item) => (
-                                            <Marker {...item} />
+                                        {MARKERS_MOROCCO.map((item, index) => (
+                                            <Marker {...item} index={index} />
                                         ))}
                                     </Grid>
                                 </Grid>
@@ -206,8 +209,8 @@ const MoroccoMap = () => {
                                 <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
                                     <Grid item md={4} xs={10} position="relative">
                                         <Img src={Senegal} />
-                                        {MARKERS_SENEGAL.map((item) => (
-                                            <Marker {...item} />
+                                        {MARKERS_SENEGAL.map((item, index) => (
+                                            <Marker {...item} index={index} />
                                         ))}
                                     </Grid>
                                 </Grid>
@@ -219,8 +222,8 @@ const MoroccoMap = () => {
                                 <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
                                     <Grid item md={4} xs={10} position="relative">
                                         <Img src={CoteDIvoire} />
-                                        {MARKERS_COTE_D_IVOIRE.map((item) => (
-                                            <Marker {...item} />
+                                        {MARKERS_COTE_D_IVOIRE.map((item, index) => (
+                                            <Marker {...item} index={index} />
                                         ))}
                                     </Grid>
                                 </Grid>
@@ -232,8 +235,8 @@ const MoroccoMap = () => {
                                 <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
                                     <Grid item md={4} xs={10} position="relative">
                                         <Img src={CapeVerde} />
-                                        {MARKERS_CAPE_VERDE.map((item) => (
-                                            <Marker {...item} />
+                                        {MARKERS_CAPE_VERDE.map((item, index) => (
+                                            <Marker {...item} index={index} />
                                         ))}
                                     </Grid>
                                 </Grid>
@@ -245,8 +248,8 @@ const MoroccoMap = () => {
                                 <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
                                     <Grid item md={2} xs={10} position="relative">
                                         <Img src={Malawi} />
-                                        {MARKERS_MALAWI.map((item) => (
-                                            <Marker {...item} />
+                                        {MARKERS_MALAWI.map((item, index) => (
+                                            <Marker {...item} index={index} />
                                         ))}
                                     </Grid>
                                 </Grid>
