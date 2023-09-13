@@ -1,4 +1,14 @@
-import { BsClipboard2CheckFill, BsFillPeopleFill, BsFillRecordCircleFill, BsFillSearchHeartFill } from 'react-icons/bs';
+import {
+    BsArrowClockwise,
+    BsBarChart,
+    BsBoxes,
+    BsClipboard2CheckFill,
+    BsFillPeopleFill,
+    BsFillRecordCircleFill,
+    BsFillSearchHeartFill,
+    BsPeople,
+    BsRocket
+} from 'react-icons/bs';
 import Agricole from '../assets/landing/agricole.png';
 import Artisanal from '../assets/landing/artisanal.png';
 import Textile from '../assets/landing/textile.png';
@@ -27,22 +37,27 @@ export const VISION = [
     {
         title: 'Amélioration des conditions de vie',
         desc: 'Opportunités qui permettent aux agriculteurs, artisans et professionnels de ces chaînes de valeur de prospérer économiquement tout en améliorant leur qualité de vie globale',
+        icon: <BsBarChart />,
     },
     {
         title: 'Développement socio-économique',
         desc: "Environnement propice à la croissance économique, à l'innovation et à la création d'emplois, tout en respectant les traditions et la culture locales",
+        icon: <BsPeople />,
     },
     {
         title: 'Synergie entre les maillons',
         desc: "En favorisant la coopération entre les différents acteurs des chaînes de valeur, nous contribuons à renforcer l'ensemble du système, de la production à la distribution, en passant par la transformation",
+        icon: <BsBoxes />,
     },
     {
         title: 'Impact durable',
         desc: 'collaboration avec les partenaires locaux pour garantir que les résultats de nos efforts perdurent sur le long terme',
+        icon: <BsArrowClockwise />,
     },
     {
         title: 'Innovation constante',
         desc: 'Nouvelles approches, technologies et pratiques pour optimiser les chaînes de valeur que nous soutenons, les rendre plus efficaces et plus durables',
+        icon: <BsRocket />,
     },
 ];
 

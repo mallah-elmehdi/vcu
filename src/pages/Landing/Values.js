@@ -89,6 +89,7 @@ const Values = () => {
                                                     fontWeight: theme.fontWeight.light,
                                                     transition: 'all .3s ease',
                                                     color: hover === index ? theme.palette.common.white : theme.palette.common.black,
+                                                    textAlign: 'justify',
                                                 })}
                                             >
                                                 {item.desc}

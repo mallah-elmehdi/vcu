@@ -28,6 +28,7 @@ const AboutUs = () => {
                                     fontSize: theme.fontSize.md,
                                     fontWeight: theme.fontWeight.light,
                                     color: theme.palette.common.black,
+                                    textAlign: 'justify',
                                 })}
                             >
                                 Un espace d'innovation sociale, de recherche-action et de co-construction qui accompagne les populations,
@@ -39,6 +40,7 @@ const AboutUs = () => {
                                     fontSize: theme.fontSize.md,
                                     fontWeight: theme.fontWeight.light,
                                     color: theme.palette.common.black,
+                                    textAlign: 'justify',
                                 })}
                             >
                                 Notre dévouement se focalise sur la conception de solutions innovantes durables visant à appuyer le

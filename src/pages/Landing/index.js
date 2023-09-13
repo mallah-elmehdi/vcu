@@ -34,7 +34,7 @@ const Landing = () => {
         }
     }, [hash]);
     return (
-        <Stack spacing={20}>
+        <Stack spacing={10}>
             <Header />
             <AboutUs />
             <SILVCUUnit />

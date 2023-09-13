@@ -10,9 +10,10 @@ import { NAVBAR_PAGES } from '../../constants/navbar';
 const Vision = () => {
     return (
         <Container id={NAVBAR_PAGES[1].id} sx={{ alignSelf: 'center' }}>
-            <Grid container spacing={10} alignItems="center">
-                <Grid item md={6} xs={12}>
-                    <Stack spacing={3}>
+            <Title>Notre Vision</Title>
+            <Grid container spacing={8} alignItems="center">
+                <Grid item md={6} xs={12} alignItems="center">
+                    <Stack spacing={3} sx={{ width: 'fit-content', mx: { md: 'auto' } }}>
                         <Box
                             sx={(theme) => ({
                                 height: { sm: 350, xs: 250 },
@@ -58,45 +59,49 @@ const Vision = () => {
                                 })}
                             />
                         </Box>
-                        <Title zigzag>Notre Vision</Title>
-                        <Typography
-                            sx={(theme) => ({
-                                fontSize: theme.fontSize.md,
-                                fontWeight: theme.fontWeight.light,
-                                color: theme.palette.common.black,
-                            })}
-                        >
-                            Notre vision est celle d'une unité de développement de chaînes de valeur qui agit comme un catalyseur de
-                            transformation positive. Nous travaillons avec passion pour créer un écosystème où les agriculteurs, artisans et
-                            professionnels prospèrent, où les communautés s'épanouissent, et où l'impact de nos efforts se fait ressentir à
-                            travers une amélioration tangible des conditions de vie. Notre engagement envers une synergie efficace au sein
-                            des chaînes de valeur est le socle sur lequel repose notre quête d'un avenir plus prospère et durable pour tous.
-                            Notre vision s'articule autour de plusieurs principes fondamentaux :
-                        </Typography>
                     </Stack>
+                    <Typography
+                        sx={(theme) => ({
+                            fontSize: theme.fontSize.md,
+                            fontWeight: theme.fontWeight.light,
+                            color: theme.palette.common.black,
+                            lineHeight: 2,
+                            textAlign: 'justify',
+                            mt: 3,
+                        })}
+                    >
+                        Notre vision est celle d'une unité de développement de chaînes de valeur qui agit comme un catalyseur de
+                        transformation positive. Nous travaillons avec passion pour créer un écosystème où les agriculteurs, artisans et
+                        professionnels prospèrent, où les communautés s'épanouissent, et où l'impact de nos efforts se fait ressentir à
+                        travers une amélioration tangible des conditions de vie. Notre engagement envers une synergie efficace au sein des
+                        chaînes de valeur est le socle sur lequel repose notre quête d'un avenir plus prospère et durable pour tous. Notre
+                        vision s'articule autour de plusieurs principes fondamentaux :
+                    </Typography>
                 </Grid>
 
                 <Grid item md={6} xs={12}>
                     {/* <Grid container spacing={3}> */}
-                    <Stack spacing={2}>
+                    <Stack spacing={4}>
                         {VISION.map((item) => (
-                            <Box display="flex" alignItems="center" gap={2}>
+                            <Box display="flex" alignItems="center" gap={3}>
                                 <Avatar
                                     sx={(theme) => ({
                                         backgroundColor: 'transparent',
-                                        width: 10,
-                                        height: 10,
+                                        width: 60,
+                                        height: 60,
                                         color: theme.palette.secondary.main,
+                                        fontSize: theme.fontSize['4xl'],
                                     })}
                                 >
-                                    <BsFillCircleFill />
+                                    {item.icon}
                                 </Avatar>
-                                <Stack>
+                                <Stack spacing={1}>
                                     <Typography
                                         sx={(theme) => ({
                                             fontSize: theme.fontSize.lg,
-                                            // fontWeight: theme.fontWeight.semibold,
-                                            color: theme.palette.primary.main,
+                                            fontWeight: theme.fontWeight.semibold,
+                                            // color: theme.palette.primary.main,
+                                            color: theme.palette.common.black,
                                         })}
                                     >
                                         {item.title}
@@ -105,7 +110,7 @@ const Vision = () => {
                                         sx={(theme) => ({
                                             fontSize: theme.fontSize.sm,
                                             fontWeight: theme.fontWeight.light,
-                                            color: theme.palette.common.black,
+                                            color: theme.palette.grey[600],
                                         })}
                                     >
                                         {item.desc}

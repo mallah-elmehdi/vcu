@@ -23,9 +23,19 @@ const SILVCUUnit = () => {
                 })}
             >
                 <Container>
-                    <Grid container spacing={10}>
+                    <Title white>SIL-VCU Unit</Title>
+                    <Grid container spacing={8}>
                         <Grid item md={5.5} xs={12}>
-                            <Title white>SIL-VCU Unit</Title>
+                            <Typography
+                                sx={(theme) => ({
+                                    fontWeight: theme.fontWeight.bold,
+                                    fontSize: theme.fontSize['xl'],
+                                    color: theme.palette.common.white,
+                                    mb: 3,
+                                })}
+                            >
+                                À propos
+                            </Typography>
                             <Typography
                                 sx={(theme) => ({
                                     fontSize: theme.fontSize.xl,
@@ -52,7 +62,16 @@ const SILVCUUnit = () => {
                         </Grid>
 
                         <Grid item md={5.5} xs={12}>
-                            <Title white>Approche Collaborative </Title>
+                            <Typography
+                                sx={(theme) => ({
+                                    fontWeight: theme.fontWeight.bold,
+                                    fontSize: theme.fontSize['xl'],
+                                    color: theme.palette.common.white,
+                                    mb: 3,
+                                })}
+                            >
+                                Approche Collaborative
+                            </Typography>
                             <Typography
                                 sx={(theme) => ({
                                     fontSize: theme.fontSize.xl,

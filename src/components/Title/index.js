@@ -2,9 +2,10 @@ import { Box, Stack, Typography } from '@mui/material';
 import React from 'react';
 import Line from '../Line';
 import Img from '../Img';
-import Zigzag from '../../assets/utils/zigzag.png';
+// import Zigzag from '../../assets/utils/zigzag.png';
+import Zigzag from '../../assets/utils/leaf-line.png';
 
-const Title = ({ children, white, zigzag, withPadding }) => {
+const Title = ({ children, white, zigzag, withPadding, smallLine }) => {
     return (
         <>
             {zigzag ? (
@@ -12,23 +13,29 @@ const Title = ({ children, white, zigzag, withPadding }) => {
                     <Typography
                         sx={(theme) => ({
                             fontWeight: theme.fontWeight.bold,
-                            fontSize: theme.fontSize['2xl'],
-                            color: theme.palette.primary.main,
+                            fontSize: theme.fontSize['xl'],
+                            color: white ? theme.palette.common.white : theme.palette.primary.main,
                             zIndex: 20,
+                            mb: smallLine ? 1 : 0,
                         })}
                     >
                         {children}
                     </Typography>
-                    <Img
-                        sx={{
-                            position: 'absolute',
-                            top: 35,
-                            left: 0,
-                            width: 35,
-                            zIndex: 0,
-                        }}
-                        src={Zigzag}
-                    />
+                    {smallLine ? (
+                        <Line smallLine={smallLine} white={white} />
+                    ) : (
+                        <Img
+                            sx={{
+                                position: 'absolute',
+                                // top: 35,
+                                top: -33,
+                                left: -20,
+                                width: 35,
+                                zIndex: 0,
+                            }}
+                            src={Zigzag}
+                        />
+                    )}
                 </Box>
             ) : (
                 <Stack
@@ -48,7 +55,7 @@ const Title = ({ children, white, zigzag, withPadding }) => {
                     >
                         {children}
                     </Typography>
-                    <Line white={white} />
+                    <Line smallLine={smallLine} white={white} />
                 </Stack>
             )}
         </>
