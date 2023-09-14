@@ -1,10 +1,9 @@
 import { Avatar, Box, CardMedia, Container, Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
-import { BsFillCircleFill } from 'react-icons/bs';
 import Image from '../../assets/landing/vision.jpg';
+import Leaf from '../../assets/utils/leaf.png';
 import { Img, Title } from '../../components';
 import { VISION } from '../../constants/landing';
-import Leaf from '../../assets/utils/leaf.png';
 import { NAVBAR_PAGES } from '../../constants/navbar';
 
 const Vision = () => {
