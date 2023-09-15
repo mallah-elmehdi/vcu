@@ -1,14 +1,14 @@
-import { AppBar, Avatar, Box, Container, Divider, IconButton, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Container, Divider, IconButton, Toolbar, Typography } from '@mui/material';
 import React from 'react';
 import { Link, Logo } from '..';
-import { CONTACT, SOCIAL } from '../../constants/footer';
+import { SOCIAL } from '../../constants/footer';
 
 const Footer = () => {
     return (
         <Box
             sx={(theme) => ({
                 backgroundColor: theme.palette.common.grey,
-                py: 5,
+                py: 1,
                 width: '100%',
             })}
         >
@@ -21,11 +21,11 @@ const Footer = () => {
                     })}
                 >
                     <Container>
-                        <Toolbar sx={{ py: 10, flexWrap: 'wrap', gap: 3 }}>
+                        <Toolbar spacing={5} sx={{ py: 3 }}>
                             <Box width="fit-content">
-                                <Logo square white />
+                                <Logo lg square white />
                             </Box>
-                            <Box
+                            {/* <Box
                                 width={{ sm: 'fit-content', xs: '100%' }}
                                 sx={{ mx: 'auto', flexGrow: 1, display: 'flex', gap: 2, flexDirection: { sm: 'row', xs: 'column' } }}
                             >
@@ -51,8 +51,8 @@ const Footer = () => {
                                         </Typography>
                                     </Box>
                                 ))}
-                            </Box>
-                            <Box display="flex" gap={1} alignItems="center">
+                            </Box> */}
+                            <Box display="flex" gap={1} alignItems="center" ml="auto">
                                 {SOCIAL.map((item, index) => {
                                     return (
                                         <Link key={index} to={item.url} target="_blank">
@@ -69,7 +69,7 @@ const Footer = () => {
                             </Box>
                         </Toolbar>
                         <Divider sx={(theme) => ({ width: '100%', borderColor: theme.palette.secondary.main })} />
-                        <Toolbar sx={{ py: 3, flexDirection: 'column', alignItems: 'flex-start' }}>
+                        <Toolbar sx={{ pt: 3, flexDirection: 'column', alignItems: 'flex-start' }}>
                             <Typography
                                 sx={(theme) => ({
                                     color: theme.palette.common.white,

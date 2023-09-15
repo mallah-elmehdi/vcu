@@ -1,31 +1,27 @@
-import { BsFacebook, BsFillEnvelopeAtFill, BsFillPhoneFill, BsLinkedin, BsTwitter, BsYoutube } from 'react-icons/bs';
+import { BsFacebook, BsFillEnvelopeAtFill, BsFillEnvelopeFill, BsInstagram, BsLinkedin } from 'react-icons/bs';
 
 export const SOCIAL = [
     {
         icon: <BsFacebook />,
-        url: 'https://www.facebook.com',
+        url: 'https://www.facebook.com/profile.php?id=100063829613645',
     },
     {
         icon: <BsLinkedin />,
-        url: 'https://www.linkedin.com',
+        url: 'https://www.linkedin.com/company/social-innovation-um6p/',
     },
     {
-        icon: <BsTwitter />,
-        url: 'https://www.twitter.com',
+        icon: <BsInstagram />,
+        url: 'https://www.instagram.com/social_innovationlab/',
     },
     {
-        icon: <BsYoutube />,
-        url: 'https://www.youtube.com',
+        icon: <BsFillEnvelopeFill />,
+        url: 'mailto:sil@um6p.ma',
     },
 ];
 
 export const CONTACT = [
     {
         icon: <BsFillEnvelopeAtFill />,
-        text: 'contact@sil.ma',
-    },
-    {
-        icon: <BsFillPhoneFill />,
-        text: '+212737272727',
+        text: 'sil@um6p.ma',
     },
 ];
