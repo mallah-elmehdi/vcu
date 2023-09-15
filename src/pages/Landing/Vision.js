@@ -27,8 +27,7 @@ const Vision = () => {
                                     right: -30,
                                     width: 100,
                                     zIndex: 0,
-                                    WebkitFilter: 'drop-shadow(0px 6px 6px rgba(0,0,0,0.2))',
-                                    filter: 'drop-shadow(0px 6px 6px rgba(0,0,0,0.2))',
+                                    ...theme.shadows.png,
                                 })}
                                 src={Leaf}
                             />

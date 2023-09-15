@@ -23,7 +23,7 @@ const SILVCUUnit = () => {
                 })}
             >
                 <Container>
-                    <Title white>SIL-VCU Unit</Title>
+                    <Title white>VCU-SIL Unit</Title>
                     <Grid container spacing={8}>
                         <Grid item md={5.5} xs={12}>
                             <Typography

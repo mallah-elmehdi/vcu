@@ -1,11 +1,12 @@
 import { Avatar, Box, Container, Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
-import { Card, Title } from '../../components';
+import { BsFillCircleFill } from 'react-icons/bs';
+import Bg from '../../assets/background/blob-2-green.png';
+import Image from '../../assets/landing/methodologie.jpg';
+import Bg2 from '../../assets/utils/leaf-branch.png';
+import { Img, Title } from '../../components';
 import { Accordion, AccordionDetails, AccordionSummary } from '../../components/Accordions';
 import { HOW_IT_WORKS } from '../../constants/landing';
-import Bg from '../../assets/landing/methodologie.jpg';
-import Bg2 from '../../assets/utils/leaf-branch.png';
-import { BsFillCircleFill } from 'react-icons/bs';
 
 const Methodologie = () => {
     const [expanded, setExpanded] = React.useState(false);
@@ -30,8 +31,18 @@ const Methodologie = () => {
                 </Title>
 
                 <Grid container spacing={10} alignItems="center">
-                    <Grid item md={6} xs={12}>
-                        <Card
+                    <Grid
+                        item
+                        md={6}
+                        xs={12}
+                        sx={(theme) => ({
+                            backgroundImage: `url(${Bg})`,
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'center',
+                            backgroundSize: 'contain',
+                        })}
+                    >
+                        {/* <Card
                             sx={(theme) => ({
                                 backgroundImage: `url(${Bg})`,
                                 backgroundRepeat: 'no-repeat',
@@ -39,7 +50,19 @@ const Methodologie = () => {
                                 backgroundSize: 'cover',
                                 height: 400,
                             })}
-                        ></Card>
+                        ></Card> */}
+                        <Stack>
+                            <Img
+                                src={Image}
+                                sx={(theme) => ({
+                                    height: 400,
+                                    width: 'auto',
+                                    mx: 'auto',
+                                    boxShadow: theme.shadows.default,
+                                    borderRadius: theme.borderRadius.xl,
+                                })}
+                            />
+                        </Stack>
                     </Grid>
                     <Grid item md={6} xs={12}>
                         <Grid container spacing={3}>

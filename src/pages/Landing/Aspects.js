@@ -1,9 +1,8 @@
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Grid } from '@mui/material';
 import React from 'react';
-import Circle from '../../assets/landing/circle-paint.png';
-import { Footer, Img, Title } from '../../components';
-import { ASPECTS } from '../../constants/landing';
 import Bg from '../../assets/background/garden.png';
+import Image from '../../assets/landing/aspects.png';
+import { Footer, Img, Title } from '../../components';
 import MoroccoMap from './MoroccoMap';
 
 const Aspects = () => {
@@ -29,7 +28,7 @@ const Aspects = () => {
                             Aspects clés pour l'analyse d'une chaine de valeur
                         </Title>
                         <Grid container justifyContent="center" mt={{ md: 20 }} sx={{ transform: { md: 'scale(1)', xs: 'scale(0.75)' } }}>
-                            <Grid item md={4} xs={10} position="relative">
+                            {/* <Grid item md={4} xs={10} position="relative">
                                 <Img src={Circle} />
 
                                 {ASPECTS.map((item, index) => (
@@ -78,6 +77,15 @@ const Aspects = () => {
                                 >
                                     VCU agricoles
                                 </Typography>
+                            </Grid> */}
+
+                            <Grid item md={10} xs={12}>
+                                <Img
+                                    src={Image}
+                                    sx={(theme) => ({
+                                        ...theme.shadows.png,
+                                    })}
+                                />
                             </Grid>
                         </Grid>
                     </Container>

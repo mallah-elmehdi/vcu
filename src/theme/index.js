@@ -91,6 +91,10 @@ theme.palette.greyDark = {
 theme.shadows = {
     ...theme.shadows,
     default: 'rgba(149, 157, 165, 0.2) 0px 8px 24px;',
+    png: {
+        WebkitFilter: 'drop-shadow(0px 6px 6px rgba(0,0,0,0.2))',
+        filter: 'drop-shadow(0px 6px 6px rgba(0,0,0,0.2))',
+    },
 };
 
 // =============== css override
