@@ -1,12 +1,12 @@
 import { Avatar, Box, Container, Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { BsFillCircleFill } from 'react-icons/bs';
-import Bg from '../../assets/background/blob-2-green.png';
-import Image from '../../assets/landing/methodologie.jpg';
-import Bg2 from '../../assets/utils/leaf-branch.png';
-import { Img, Title } from '../../components';
-import { Accordion, AccordionDetails, AccordionSummary } from '../../components/Accordions';
-import { HOW_IT_WORKS } from '../../constants/landing';
+import Bg from '../../../assets/background/blob-2-green.png';
+import Image from '../../../assets/landing/methodologie.jpg';
+import Bg2 from '../../../assets/utils/leaf-branch.png';
+import { Img, Title } from '../../../components';
+import { Accordion, AccordionDetails, AccordionSummary } from '../../../components/Accordions';
+import { HOW_IT_WORKS_FR } from '../../../constants/landing';
 
 const Methodologie = () => {
     const [expanded, setExpanded] = React.useState(false);
@@ -66,7 +66,7 @@ const Methodologie = () => {
                     </Grid>
                     <Grid item md={6} xs={12}>
                         <Grid container spacing={3}>
-                            {HOW_IT_WORKS.map((item, index) => (
+                            {HOW_IT_WORKS_FR.map((item, index) => (
                                 <Grid item xs={12}>
                                     <Accordion expanded={expanded === 'panel' + index} onChange={handleChange('panel' + index)}>
                                         <AccordionSummary aria-controls="panel1bh-content" id="panel1bh-header">

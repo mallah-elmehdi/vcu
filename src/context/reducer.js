@@ -1,15 +1,11 @@
-import {
-    ACTION_FINISHED,
-    ACTION_IN_PROGRESS,
-    REMOVE_ALERT,
-    RESET_GENERAL_STATES,
-    SET_ALERT,
-} from './actionsType';
+import { ACTION_FINISHED, ACTION_IN_PROGRESS, LANG_EN, LANG_FR, REMOVE_ALERT, RESET_GENERAL_STATES, SET_ALERT } from './actionsType';
+import { LANG } from '../constants/landing';
 
 export const initialData = {
     // ============ general states
     loader: false,
     alert: null,
+    lang: LANG.FR,
 };
 
 export const reducer = (state, action) => {
@@ -31,6 +27,12 @@ export const reducer = (state, action) => {
             return { ...state, alert: payload };
         case REMOVE_ALERT:
             return { ...state, alert: null };
+
+        // ======= ALERT
+        case LANG_FR:
+            return { ...state, lang: LANG.FR };
+        case LANG_EN:
+            return { ...state, lang: LANG.EN };
 
         default:
             break;

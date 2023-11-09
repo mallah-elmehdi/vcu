@@ -1,9 +1,8 @@
-import { Alert, Box, Snackbar, alpha } from '@mui/material';
+import { Box } from '@mui/material';
 import React, { useEffect, useReducer, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
-import { Loader } from '../../components';
 import { PAGES } from '../../constants/pages';
-import { removeAlert, resetGeneralStates } from '../../context/actions';
+import { resetGeneralStates } from '../../context/actions';
 import { initialData, reducer } from '../../context/reducer';
 import { useScrollToTop } from '../../hooks';
 import usePageTitle from '../../hooks/usePageTitle';
@@ -63,20 +62,20 @@ const Base = () => {
                 width: '100%',
             })}
         >
-            {states.loader && (
-                <Box
-                    position="fixed"
-                    sx={(theme) => ({ zIndex: theme.zIndex.modal + 2, backgroundColor: alpha(theme.palette.common.black, 0.25) })}
-                    width="100vw"
-                    height="100vh"
-                    display="flex"
-                    justifyContent="center"
-                    alignItems="center"
-                >
-                    <Loader />
-                </Box>
-            )}
-            {states.alert && (
+            {/* {states.loader && (
+                    <Box
+                        position="fixed"
+                        sx={(theme) => ({ zIndex: theme.zIndex.modal + 2, backgroundColor: alpha(theme.palette.common.black, 0.25) })}
+                        width="100vw"
+                        height="100vh"
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
+                    >
+                        <Loader />
+                    </Box>
+                )} */}
+            {/* {states.alert && (
                 <Snackbar open={true} autoHideDuration={2000} onClose={() => dispatch(removeAlert())}>
                     <Alert
                         onClose={() => dispatch(removeAlert())}
@@ -94,7 +93,7 @@ const Base = () => {
                         {states.alert.message && states.alert.message.length !== 0 ? states.alert.message : 'Error has been occurred'}
                     </Alert>
                 </Snackbar>
-            )}
+            )} */}
             <Outlet context={{ states, dispatch }} />
         </Box>
     );

@@ -14,7 +14,12 @@ import Artisanal from '../assets/landing/artisanal.png';
 import Textile from '../assets/landing/textile.png';
 import TourismeDurable from '../assets/landing/tourisme_durable.png';
 
-export const ABOUT_US = [
+export const LANG = {
+    FR: 'FR',
+    EN: 'EN',
+};
+
+export const ABOUT_US_FR = [
     {
         title: 'Co-définition',
         desc: 'des besoins socio-économiques avec les populations et les parties prenantes',
@@ -33,7 +38,26 @@ export const ABOUT_US = [
     },
 ];
 
-export const VISION = [
+export const ABOUT_US_EN = [
+    {
+        title: 'Co-definition',
+        desc: 'of socio-economic needs with populations and stakeholders',
+    },
+    {
+        title: 'Building multidisciplinary teams',
+        desc: 'with Researchers, Professionals, Socio-Economic Development Officers',
+    },
+    {
+        title: 'Co-construction',
+        desc: 'of high-impact and innovative solutions',
+    },
+    {
+        title: 'Sustainability',
+        desc: 'of the impact of the actions and projects launched.',
+    },
+];
+
+export const VISION_FR = [
     {
         title: 'Amélioration des conditions de vie',
         desc: 'Opportunités qui permettent aux agriculteurs, artisans et professionnels de ces chaînes de valeur de prospérer économiquement tout en améliorant leur qualité de vie globale',
@@ -61,7 +85,35 @@ export const VISION = [
     },
 ];
 
-export const VALUES = [
+export const VISION_EN = [
+    {
+        title: 'Improving livelihoods',
+        desc: 'Opportunities that enable farmers, artisans and professionals in these value chains to prosper economically while improving their overall quality of life.',
+        icon: <BsBarChart />,
+    },
+    {
+        title: 'Socio-economic development',
+        desc: 'An environment conducive to economic growth, innovation and job creation, while respecting local traditions and culture.',
+        icon: <BsPeople />,
+    },
+    {
+        title: 'Linked Synergy',
+        desc: 'By fostering cooperation among the various actors in the value chains, we help strengthen the entire system, from production to processing to distribution.',
+        icon: <BsBoxes />,
+    },
+    {
+        title: 'Lasting impact',
+        desc: 'Working with local partners to ensure that the results of our efforts are sustainable in the long term.',
+        icon: <BsArrowClockwise />,
+    },
+    {
+        title: 'Constant innovation',
+        desc: 'New approaches, technologies and practices to optimize and make the value chains we support more efficient and sustainable.',
+        icon: <BsRocket />,
+    },
+];
+
+export const VALUES_FR = [
     {
         title: 'Agricole',
         desc: "Notre approche pour le développement des chaînes de valeur agricole s'articule autour de la promotion de pratiques agricoles durables, visant à préserver les ressources naturelles et à maintenir l'équilibre des écosystèmes, tout en encourageant la valorisation des produits agricoles en produits à haute valeur ajoutée",
@@ -84,7 +136,30 @@ export const VALUES = [
     },
 ];
 
-export const HOW_IT_WORKS = [
+export const VALUES_EN = [
+    {
+        title: 'Agriculture',
+        desc: 'Our approach in developing agricultural value chains is based on the promotion of sustainable agricultural practices aimed at conserving natural resources and maintaining the balance of ecosystems, while encouraging the valorization of agricultural products into high value-added products',
+        image: Agricole,
+    },
+    {
+        title: 'Handicrafts',
+        desc: 'Handicrafts are a precious cultural treasure that we want to preserve while turning them into a sustainable source of income for artisans. Our approach is to support the modernization of production processes while respecting traditional skills.',
+        image: Artisanal,
+    },
+    {
+        title: 'Sustainable tourism',
+        desc: 'Our approach to sustainable tourism is based on preserving the natural and cultural environment while providing authentic tourism experiences. We work with local stakeholders to develop eco-tourism itineraries, promote community-based tourism, and develop sustainable tourism products.',
+        image: TourismeDurable,
+    },
+    {
+        title: 'Textiles',
+        desc: 'We promote the production of high-quality textiles through the use of fair and environmentally friendly production practices, while ensuring an increase in income and a reduction in labor.',
+        image: Textile,
+    },
+];
+
+export const HOW_IT_WORKS_FR = [
     {
         title: 'Diagnostic',
         image: <BsFillSearchHeartFill />,
@@ -107,45 +182,32 @@ export const HOW_IT_WORKS = [
     },
 ];
 
-export const ASPECTS = [
+export const HOW_IT_WORKS_EN = [
     {
-        title: 'Coûts et Revenus',
-        position: {
-            top: 0,
-            right: '50%',
-        },
+        title: 'Diagnosis',
+        image: <BsFillSearchHeartFill />,
+        desc: ['Field', 'Bibliography', 'Cartography'],
     },
     {
-        title: 'Contraintes et Défis',
-        position: {
-            top: '30%',
-            right: 0,
-        },
+        title: 'Restitution',
+        image: <BsFillPeopleFill />,
+        desc: ['Data collected', 'National and international context'],
     },
     {
-        title: 'Durabilité et responsabilité Sociale',
-        position: {
-            top: '80%',
-            right: '20%',
-        },
+        title: 'Implementation plan',
+        image: <BsFillRecordCircleFill />,
+        desc: ['Capacity building', 'Technical assistance', 'Investment support'],
     },
     {
-        title: 'Innovation et Technologie',
-        position: {
-            top: '80%',
-            right: '80%',
-        },
-    },
-    {
-        title: 'Stratégies de Marché',
-        position: {
-            top: '30%',
-            right: '100%',
-        },
+        title: 'Evaluation',
+        image: <BsClipboard2CheckFill />,
+        desc: ['KPIs / KVIs', 'Output strategy'],
     },
 ];
 
-export const MARKERS_MOROCCO = [
+// ==================================================
+
+export const MARKERS_MOROCCO_FR = [
     {
         top: '17%',
         right: '45%',
@@ -193,7 +255,7 @@ export const MARKERS_MOROCCO = [
         desc: ['ÉLEVAGE DE MOUTONS SARDI', 'PAMS', 'ORGE', 'APICULTURE'],
         correction: 10,
         reverse: true,
-        line: 230,
+        line: 200,
     },
     {
         top: '45%',
@@ -202,11 +264,11 @@ export const MARKERS_MOROCCO = [
         desc: ['ORGE'],
         correction: 10,
         reverse: true,
-        // line: 200,
+        line: 100,
     },
 ];
 
-export const MARKERS_SENEGAL = [
+export const MARKERS_SENEGAL_FR = [
     {
         top: '50%',
         right: '50%',
@@ -217,7 +279,7 @@ export const MARKERS_SENEGAL = [
     },
 ];
 
-export const MARKERS_COTE_D_IVOIRE = [
+export const MARKERS_COTE_D_IVOIRE_FR = [
     {
         top: '50%',
         right: '50%',
@@ -228,7 +290,7 @@ export const MARKERS_COTE_D_IVOIRE = [
     },
 ];
 
-export const MARKERS_CAPE_VERDE = [
+export const MARKERS_CAPE_VERDE_FR = [
     {
         top: '50%',
         right: '50%',
@@ -239,7 +301,7 @@ export const MARKERS_CAPE_VERDE = [
     },
 ];
 
-export const MARKERS_MALAWI = [
+export const MARKERS_MALAWI_FR = [
     {
         top: '50%',
         right: '50%',
@@ -250,4 +312,112 @@ export const MARKERS_MALAWI = [
     },
 ];
 
-export const TABS_COUNTRIES = ['MOROCCO', 'SENEGAL', 'IVORY COAST', 'CAPE VERDE', 'MALAWI'];
+export const TABS_COUNTRIES_FR = ['MAROC', 'SÉNÉGAL', "CÔTE D'IVOIRE", 'CAP-VERT', 'MALAWI'];
+
+// =========================
+
+export const MARKERS_MOROCCO_EN = [
+    {
+        top: '17%',
+        right: '45%',
+        text: 'EL-JADIDA',
+        desc: ['SNAILS FARMING'],
+        correction: -52,
+    },
+    {
+        top: '27%',
+        right: '53%',
+        text: 'SAFI',
+        line: 250,
+        desc: ['BELDI CHICKEN', 'CAPRES', 'APICULTURE'],
+        correction: -90,
+    },
+    {
+        top: '57%',
+        right: '76%',
+        text: 'GUELMIM',
+        desc: ['CAMEL BASED PRODUCTS'],
+        correction: -52,
+        line: 170,
+    },
+    {
+        top: '80%',
+        right: '92%',
+        text: 'DAKHLA',
+        desc: ['CAMEL BASED PRODUCTS'],
+        correction: -52,
+        line: 170,
+    },
+    {
+        top: '25%',
+        right: '15%',
+        text: 'DARAA TAFILALT',
+        desc: ['ROSE', 'DATES', 'AROMATIC AND MEDICINAL PLANTS', 'APPLES'],
+        correction: -108,
+        reverse: true,
+        line: 260,
+    },
+    {
+        top: '35%',
+        right: '25%',
+        text: 'KHOURIBGA',
+        desc: ['AROMATIC AND MEDICINAL PLANTS', 'SARDI SHEEPS FARMING', 'BARLEY', 'APICULTURE'],
+        correction: 10,
+        reverse: true,
+        line: 280,
+    },
+    {
+        top: '45%',
+        right: '50%',
+        text: 'RHAMNA',
+        desc: ['BARLEY'],
+        correction: 10,
+        reverse: true,
+    },
+];
+
+export const MARKERS_SENEGAL_EN = [
+    {
+        top: '50%',
+        right: '50%',
+        text: 'SENEGAL',
+        desc: ['BAOBAB', 'SALT', 'RICE', 'CASHEW', 'MANGO', 'VEGETABLE PRODUCTS'],
+        correction: -140,
+        line: 330,
+    },
+];
+
+export const MARKERS_COTE_D_IVOIRE_EN = [
+    {
+        top: '50%',
+        right: '50%',
+        text: 'IVORY COAST',
+        desc: ['SHEA BUTTER'],
+        correction: -52,
+        line: 330,
+    },
+];
+
+export const MARKERS_CAPE_VERDE_EN = [
+    {
+        top: '50%',
+        right: '50%',
+        text: 'CAPE VERDE',
+        desc: ['SALINE AGRICULTURE'],
+        correction: -52,
+        line: 330,
+    },
+];
+
+export const MARKERS_MALAWI_EN = [
+    {
+        top: '50%',
+        right: '50%',
+        text: 'MALAWI',
+        desc: ['PIGEON PEA'],
+        correction: -52,
+        line: 330,
+    },
+];
+
+export const TABS_COUNTRIES_EN = ['MOROCCO', 'SENEGAL', 'IVORY COAST', 'CAPE VERDE', 'MALAWI'];

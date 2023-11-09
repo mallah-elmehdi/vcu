@@ -3,15 +3,15 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
-import Slide1 from '../../assets/landing/slide-1.jpg';
-import Slide2 from '../../assets/landing/slide-2.jpg';
-import Slide3 from '../../assets/landing/slide-3.jpg';
-import Slide5 from '../../assets/landing/slide-5.jpg';
-import Slide6 from '../../assets/landing/slide-6.jpg';
-import { Button, Link, Navbar } from '../../components';
-import { PAGES } from '../../constants/pages';
-import { NAVBAR_PAGES } from '../../constants/navbar';
-import { VALUES } from '../../constants/landing';
+import Slide1 from '../../../assets/landing/slide-1.jpg';
+import Slide2 from '../../../assets/landing/slide-2.jpg';
+import Slide3 from '../../../assets/landing/slide-3.jpg';
+import Slide5 from '../../../assets/landing/slide-5.jpg';
+import Slide6 from '../../../assets/landing/slide-6.jpg';
+import { Button, Link, Navbar } from '../../../components';
+import { PAGES } from '../../../constants/pages';
+import { NAVBAR_PAGES_FR } from '../../../constants/navbar';
+import { VALUES_FR } from '../../../constants/landing';
 
 const images = [Slide1, Slide2, Slide3, Slide5, Slide6];
 
@@ -88,9 +88,9 @@ const Header = () => {
                 </Container>
                 <Container>
                     <Grid container spacing={3}>
-                        {VALUES.map((item) => (
+                        {VALUES_FR.map((item) => (
                             <Grid item md={3} sm={6} xs={12}>
-                                <Link to={PAGES.landing.url + '#' + NAVBAR_PAGES[2].id}>
+                                <Link to={PAGES.landing.url + '#' + NAVBAR_PAGES_FR[2].id}>
                                     <Button variant="outlined" color="muted" sx={{ width: '100%' }}>
                                         {item.title}
                                     </Button>

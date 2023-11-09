@@ -1,11 +1,11 @@
 import { Avatar, Box, Container, Grid, Stack, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
-import { Card, Title } from '../../components';
-import { VALUES } from '../../constants/landing';
-import Bg1 from '../../assets/background/wave-1.png';
-import Bg2 from '../../assets/background/wave-2.png';
-import { NAVBAR_PAGES } from '../../constants/navbar';
+import { Card, Title } from '../../../components';
+import { VALUES_FR } from '../../../constants/landing';
+import Bg1 from '../../../assets/background/wave-1.png';
+import Bg2 from '../../../assets/background/wave-2.png';
+import { NAVBAR_PAGES_FR } from '../../../constants/navbar';
 
 const Values = () => {
     const [hover, setHover] = useState(-1);
@@ -30,10 +30,10 @@ const Values = () => {
                     py: 10,
                 })}
             >
-                <Container id={NAVBAR_PAGES[2].id}>
+                <Container id={NAVBAR_PAGES_FR[2].id}>
                     <Title>Nos Chaînes de Valeur</Title>
                     <Grid container spacing={3}>
-                        {VALUES.map((item, index) => (
+                        {VALUES_FR.map((item, index) => (
                             <Grid item md={3} sm={6} xs={12}>
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}

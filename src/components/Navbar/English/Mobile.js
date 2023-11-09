@@ -1,14 +1,16 @@
-import { Box, IconButton, Stack, alpha } from '@mui/material';
+import { Avatar, Box, IconButton, Stack, alpha } from '@mui/material';
 import React from 'react';
-import { ButtonLink, Dialog, Link, Logo } from '../../components';
-
-// import { NAVBAR_PAGES } from '../../constants/navbar';
+import { ButtonLink, Dialog, Link, Logo } from '../..';
 import { BsList, BsX } from 'react-icons/bs';
-import { NAVBAR_PAGES } from '../../constants/navbar';
+import { NAVBAR_PAGES_FR } from '../../../constants/navbar';
+import { useOutletContext } from 'react-router-dom';
+import { setLangFR } from '../../../context/actions';
+import FR_FLAG from '../../../assets/utils/fr.png';
 
 // ========== MENU TRANSITION
-
 const Mobile = ({ sticky }) => {
+    const { dispatch } = useOutletContext();
+
     // ========== DIALOG OPEN/CLOSE
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = () => setOpen(true);
@@ -23,6 +25,9 @@ const Mobile = ({ sticky }) => {
                     onClick={handleClickOpen}
                 >
                     <BsList />
+                </IconButton>
+                <IconButton onClick={() => dispatch(setLangFR())}>
+                    <Avatar sx={{ width: 25, height: 25 }} src={FR_FLAG} />
                 </IconButton>
             </Box>
             <Dialog sx={{ '.MuiDialog-paper': { borderRadius: 0 } }} open={open} onClose={handleClose} fullScreen>
@@ -60,7 +65,7 @@ const Mobile = ({ sticky }) => {
                             flexDirection: 'column',
                         }}
                     >
-                        {NAVBAR_PAGES.map((page, index) => (
+                        {NAVBAR_PAGES_FR.map((page, index) => (
                             <Link key={index} to={page.url}>
                                 <ButtonLink
                                     sx={(theme) => ({

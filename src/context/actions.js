@@ -1,10 +1,4 @@
-import {
-    ACTION_FINISHED,
-    ACTION_IN_PROGRESS,
-    REMOVE_ALERT,
-    SET_ALERT,
-    RESET_GENERAL_STATES,
-} from './actionsType';
+import { ACTION_FINISHED, ACTION_IN_PROGRESS, REMOVE_ALERT, SET_ALERT, RESET_GENERAL_STATES, LANG_FR, LANG_EN } from './actionsType';
 
 // ========== STATES
 export const resetGeneralStates = () => ({ type: RESET_GENERAL_STATES });
@@ -17,3 +11,6 @@ export const actionFinished = () => ({ type: ACTION_FINISHED });
 export const setAlert = (payload) => ({ type: SET_ALERT, payload });
 export const removeAlert = () => ({ type: REMOVE_ALERT });
 
+// ========== CHANGE LANGUAGE
+export const setLangFR = () => ({ type: LANG_FR });
+export const setLangEN = () => ({ type: LANG_EN });

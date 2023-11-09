@@ -1,14 +1,14 @@
 import { Avatar, Box, CardMedia, Container, Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
-import Image from '../../assets/landing/vision.jpg';
-import Leaf from '../../assets/utils/leaf.png';
-import { Img, Title } from '../../components';
-import { VISION } from '../../constants/landing';
-import { NAVBAR_PAGES } from '../../constants/navbar';
+import Image from '../../../assets/landing/vision.jpg';
+import Leaf from '../../../assets/utils/leaf.png';
+import { Img, Title } from '../../../components';
+import { VISION_FR } from '../../../constants/landing';
+import { NAVBAR_PAGES_FR } from '../../../constants/navbar';
 
 const Vision = () => {
     return (
-        <Container id={NAVBAR_PAGES[1].id} sx={{ alignSelf: 'center' }}>
+        <Container id={NAVBAR_PAGES_FR[1].id} sx={{ alignSelf: 'center' }}>
             <Title>Notre Vision</Title>
             <Grid container spacing={8} alignItems="center">
                 <Grid item md={6} xs={12} alignItems="center">
@@ -80,7 +80,7 @@ const Vision = () => {
                 <Grid item md={6} xs={12}>
                     {/* <Grid container spacing={3}> */}
                     <Stack spacing={4}>
-                        {VISION.map((item) => (
+                        {VISION_FR.map((item) => (
                             <Box display="flex" alignItems="center" gap={3}>
                                 <Avatar
                                     sx={(theme) => ({

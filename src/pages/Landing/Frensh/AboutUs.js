@@ -1,11 +1,11 @@
 import { Box, Container, Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
 import 'swiper/css';
-import Bg from '../../assets/background/blob-1.png';
-import Leaf from '../../assets/utils/leaf.png';
-import { Card, Img, Title } from '../../components';
-import { ABOUT_US } from '../../constants/landing';
-import { NAVBAR_PAGES } from '../../constants/navbar';
+import Bg from '../../../assets/background/blob-1.png';
+import Leaf from '../../../assets/utils/leaf.png';
+import { Card, Img, Title } from '../../../components';
+import { ABOUT_US_FR } from '../../../constants/landing';
+import { NAVBAR_PAGES_FR } from '../../../constants/navbar';
 
 const AboutUs = () => {
     return (
@@ -17,7 +17,7 @@ const AboutUs = () => {
                 backgroundSize: 'contain',
             })}
         >
-            <Container id={NAVBAR_PAGES[0].id} sx={{ alignSelf: 'center' }}>
+            <Container id={NAVBAR_PAGES_FR[0].id} sx={{ alignSelf: 'center' }}>
                 <Title>À propos de nous</Title>
                 <Grid container spacing={5} alignItems="center">
                     <Grid item md={6}>
@@ -45,7 +45,7 @@ const AboutUs = () => {
                             >
                                 Notre dévouement se focalise sur la conception de solutions innovantes durables visant à appuyer le
                                 développement socio-économique des communautés. Notre méthodologie de travail repose sur quatre étapes
-                                distinctives
+                                distinctives.
                             </Typography>
                         </Stack>
                     </Grid>
@@ -63,7 +63,7 @@ const AboutUs = () => {
                         style={{ overflow: 'visible' }}
                     > */}
                         <Grid container spacing={4}>
-                            {ABOUT_US.map((item, index) => (
+                            {ABOUT_US_FR.map((item, index) => (
                                 <Grid item sm={index === 0 || index === 3 ? 5.2 : 6.8} xs={12}>
                                     <Card
                                         sx={(theme) => ({

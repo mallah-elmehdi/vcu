@@ -9,6 +9,8 @@ export { default as Img } from './Img';
 export { default as Title } from './Title';
 export { default as Card } from './Card';
 export { default as Footer } from './Footer';
+export { default as LanguageBar } from './LanguageBar';
+
 // export { default as Line } from './Line';
 // export { default as IconCard } from './IconCard';
 // export { default as IconCardLight } from './IconCardLight';

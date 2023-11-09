@@ -1,7 +1,7 @@
 import { Box, Container, Divider, Grid, Typography, useMediaQuery } from '@mui/material';
 import React from 'react';
-import { Title } from '../../components';
-import Bg from '../../assets/landing/unit.jpg';
+import { Title } from '../../../components';
+import Bg from '../../../assets/landing/unit.jpg';
 
 const SILVCUUnit = () => {
     const md = useMediaQuery((theme) => theme.breakpoints.up('md'));

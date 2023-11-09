@@ -1,22 +1,22 @@
 import { Avatar, Box, Container, Divider, Grid, Grow, Stack, Tab, Tabs, Typography, Zoom, styled } from '@mui/material';
 import React from 'react';
 import { BsFillCircleFill } from 'react-icons/bs';
-import Morocco from '../../assets/landing/morocco.png';
-import Senegal from '../../assets/landing/senegal.png';
-import CoteDIvoire from '../../assets/landing/cote_d_ivoire.png';
-import CapeVerde from '../../assets/landing/cape_verde.png';
-import Malawi from '../../assets/landing/malawi.png';
-import { Img, Title } from '../../components';
+import Morocco from '../../../assets/landing/morocco.png';
+import Senegal from '../../../assets/landing/senegal.png';
+import CoteDIvoire from '../../../assets/landing/cote_d_ivoire.png';
+import CapeVerde from '../../../assets/landing/cape_verde.png';
+import Malawi from '../../../assets/landing/malawi.png';
+import { Img, Title } from '../../../components';
 import {
-    MARKERS_CAPE_VERDE,
-    MARKERS_COTE_D_IVOIRE,
-    MARKERS_MALAWI,
-    MARKERS_MOROCCO,
-    MARKERS_SENEGAL,
-    TABS_COUNTRIES,
-} from '../../constants/landing';
-import Bg from '../../assets/landing/maps.jpg';
-import { NAVBAR_PAGES } from '../../constants/navbar';
+    MARKERS_CAPE_VERDE_EN,
+    MARKERS_COTE_D_IVOIRE_EN,
+    MARKERS_MALAWI_EN,
+    MARKERS_MOROCCO_EN,
+    MARKERS_SENEGAL_EN,
+    TABS_COUNTRIES_EN,
+} from '../../../constants/landing';
+import Bg from '../../../assets/landing/maps.jpg';
+import { NAVBAR_PAGES_EN } from '../../../constants/navbar';
 
 const Marker = ({ top, right, text, line, desc, correction, reverse, index }) => {
     return (
@@ -166,7 +166,7 @@ const MoroccoMap = () => {
 
     return (
         <Box
-            id={NAVBAR_PAGES[4].id}
+            id={NAVBAR_PAGES_EN[4].id}
             sx={(theme) => ({
                 position: 'relative',
                 backgroundImage: `url(${Bg})`,
@@ -183,11 +183,11 @@ const MoroccoMap = () => {
                 })}
             >
                 <Container sx={{ alignSelf: 'center' }}>
-                    <Title>VCU SIL à Aujourd'hui</Title>
+                    <Title>VCU SIL up to date</Title>
 
                     <Box sx={{ width: '100%' }}>
                         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" centered sx={{ mb: 5 }}>
-                            {TABS_COUNTRIES.map((item, index) => (
+                            {TABS_COUNTRIES_EN.map((item, index) => (
                                 <StyledTab iconPosition="start" icon={<BsFillCircleFill />} label={item} {...a11yProps(index)} />
                             ))}
                         </Tabs>
@@ -196,7 +196,7 @@ const MoroccoMap = () => {
                                 <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
                                     <Grid item md={4} xs={10} position="relative">
                                         <Img src={Morocco} />
-                                        {MARKERS_MOROCCO.map((item, index) => (
+                                        {MARKERS_MOROCCO_EN.map((item, index) => (
                                             <Marker {...item} index={index} />
                                         ))}
                                     </Grid>
@@ -209,7 +209,7 @@ const MoroccoMap = () => {
                                 <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
                                     <Grid item md={4} xs={10} position="relative">
                                         <Img src={Senegal} />
-                                        {MARKERS_SENEGAL.map((item, index) => (
+                                        {MARKERS_SENEGAL_EN.map((item, index) => (
                                             <Marker {...item} index={index} />
                                         ))}
                                     </Grid>
@@ -222,7 +222,7 @@ const MoroccoMap = () => {
                                 <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
                                     <Grid item md={4} xs={10} position="relative">
                                         <Img src={CoteDIvoire} />
-                                        {MARKERS_COTE_D_IVOIRE.map((item, index) => (
+                                        {MARKERS_COTE_D_IVOIRE_EN.map((item, index) => (
                                             <Marker {...item} index={index} />
                                         ))}
                                     </Grid>
@@ -235,7 +235,7 @@ const MoroccoMap = () => {
                                 <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
                                     <Grid item md={4} xs={10} position="relative">
                                         <Img src={CapeVerde} />
-                                        {MARKERS_CAPE_VERDE.map((item, index) => (
+                                        {MARKERS_CAPE_VERDE_EN.map((item, index) => (
                                             <Marker {...item} index={index} />
                                         ))}
                                     </Grid>
@@ -248,7 +248,7 @@ const MoroccoMap = () => {
                                 <Grid container justifyContent="center" sx={{ transform: { md: 'scale(1)', xs: 'scale(0.5)' } }}>
                                     <Grid item md={2} xs={10} position="relative">
                                         <Img src={Malawi} />
-                                        {MARKERS_MALAWI.map((item, index) => (
+                                        {MARKERS_MALAWI_EN.map((item, index) => (
                                             <Marker {...item} index={index} />
                                         ))}
                                     </Grid>
